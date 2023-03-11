@@ -20,8 +20,9 @@ function calcBlind(numberOfPlayers, dealerOrSmallBlind){
     }
 }
 
+export { randomNumber, calcBlind };
 //Test
-console.log("The number of players are " + (numberOfPlayers + 1));
-console.log("The dealer is " + dealer);
-console.log("The small blind is " + smallBlind);
-console.log("The big blind is " + bigBlind)
+//console.log("The number of players are " + (numberOfPlayers + 1));
+//console.log("The dealer is " + dealer);
+//console.log("The small blind is " + smallBlind);
+//console.log("The big blind is " + bigBlind)

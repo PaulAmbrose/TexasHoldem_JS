@@ -40,6 +40,6 @@ class Player {
 }
 
 //Test
-let Paul = new Player("Paul", 500);
-Paul.receiveCard("Jack of Clubs");
-console.log(Paul.hand);
+//let Paul = new Player("Paul", 500);
+//Paul.receiveCard("Jack of Clubs");
+//console.log(Paul.hand);
