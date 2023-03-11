@@ -1,7 +1,7 @@
 "use strict"
 
 class Player {
-  constructor(name, chips = 1000) {
+  constructor(name = "initialSetup", chips = 1000) {
     this.name = name;
     this.chips = chips;
     this.hand = [];
