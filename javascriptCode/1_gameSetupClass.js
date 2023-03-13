@@ -16,23 +16,22 @@ class game{
         this.dealer = random;
   }
 
-  selectSmallBlind(dealer){
+  selectBlinds(dealer){
       dealer++;
-      //sort issue is number of players is exceeded
-      this.smallBlind = dealer;
-  }
 
-  selectBigBlind(smallBlind){
-      smallBlind++;
-      this.bigBlind = smallBlind;
-  }
+      if ((this.numberOfPlayers +1) == dealer){
+        this.smallBlind = 0;
+        this.bigBlind = 1;
+      } else {
+          this.smallBlind = dealer;
+          this.bigBlind = (dealer +1)
+      }
+}
 
   populatePlayers(numberOfPlayers){
       for(let i = 0; i < numberOfPlayers; i++){
         let createNextPlayer = new playerClass.Player();
         createNextPlayer.name = "Player " + (i+1);
-
-        console.log(i);
 
         if(i == this.dealer){
           createNextPlayer.dealer = true;
