@@ -6,6 +6,9 @@ class Player {
     this.chips = chips;
     this.hand = [];
     this.folded = false;
+    this.dealer = false;
+    this.smallBlind = false;
+    this.bigBlind = false;
   }
 
   toString() {
@@ -39,7 +42,4 @@ class Player {
   }
 }
 
-//Test
-//let Paul = new Player("Paul", 500);
-//Paul.receiveCard("Jack of Clubs");
-//console.log(Paul.hand);
+export {Player};
