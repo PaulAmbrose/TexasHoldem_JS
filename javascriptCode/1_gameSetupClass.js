@@ -12,40 +12,37 @@ class game{
   }
 
   selectDealer(){
-      let random = Math.floor((Math.random() * this.numberOfPlayers) + 1);
+      let random = Math.floor((Math.random() * this.numberOfPlayers));
         this.dealer = random;
   }
 
   selectBlinds(dealer){
-      dealer++;
+      let endOfplayersList = this.numberOfPlayers;
 
-      if ((this.numberOfPlayers +1) == dealer){
+      //if dealer is endOfplayersList-1:  smallblind = + 1; bigBlind = 0
+      if(this.dealer  == (endOfplayersList - 1)){
+        this.smallBlind = dealer + 1;
+        this.bigBlind = 0;
+      }
+      //if dealer = endOfplayersList:  smallblind = 0; bigBlind = 1
+        else if (this.dealer  == endOfplayersList){
         this.smallBlind = 0;
         this.bigBlind = 1;
       } else {
-          this.smallBlind = dealer;
-          this.bigBlind = (dealer +1)
+        //if endOfplayersList is not reached yet
+        this.smallBlind = dealer + 1;
+        this.bigBlind = dealer + 2;
       }
-}
+    };
 
   populatePlayers(numberOfPlayers){
-      for(let i = 0; i < numberOfPlayers; i++){
-        let createNextPlayer = new playerClass.Player();
-        createNextPlayer.name = "Player " + (i+1);
-
-        if(i == this.dealer){
-          createNextPlayer.dealer = true;
-        } else if (i == this.bigBlind) {
-          createNextPlayer.bigBlind = true;
-        } else if (i == this.smallBlind){
-          createNextPlayer.smallBlind = true;
-        } else{
-        };
-
-        this.playersArray[i] = createNextPlayer;
+      for(let i = 0; i < numberOfPlayers; i++)
+        {
+          let createNextPlayer = new playerClass.Player();
+          createNextPlayer.name = "Player " + (i+1);
+          this.playersArray[i] = createNextPlayer;
+        }
       }
-  }
-
 }
 
 export {game};
