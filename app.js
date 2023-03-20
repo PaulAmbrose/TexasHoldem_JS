@@ -1,21 +1,20 @@
 "use strict"
 
 import * as gameSetupClass from "./javascriptCode/1_gameSetupClass.js";
-
-/*
-let testRandom = dealerAndBlinds.randomNumber(5);
-console.log(testRandom);
-let test = new playerClass.Player("paul", 500);
-console.log(test);
-*/
+import * as cardDeckClass from "./javascriptCode/3_cardDeckClass.js";
 
 //Initial set up of game
 let numberOfPlayers = 6;
 let game = new gameSetupClass.game;
-  game.selectDealer(numberOfPlayers);
-  game.selectSmallBlind(game.dealer);
-  game.selectBigBlind(game.smallBlind);
-game.populatePlayers(numberOfPlayers);
 
-//Initial set up of round
-console.log(game);
+let testRandomRange = []
+
+for(let i = 0; i < 50; i++){
+      let testDealer = game.selectDealer();
+      if (testDealer > (numberOfPlayers - 1)){
+          testRandomRange.push(testDealer);
+      }else{
+          testRandomRange.push(testDealer);
+      }
+    }
+    console.log(testRandomRange);
